@@ -1,5 +1,9 @@
-import { FormSignIn } from '@/components/molecules';
+import { HeaderAndFooter } from '@/components/templates';
 
 export default function Home() {
-  return <FormSignIn />;
+  return (
+    <HeaderAndFooter>
+      <div>oakwodkaw</div>
+    </HeaderAndFooter>
+  );
 }

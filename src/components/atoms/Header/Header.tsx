@@ -1,10 +1,13 @@
 'use client';
+
 import * as React from 'react';
 import { Button } from '..';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
   const [token, setToken] = React.useState('');
+  const router = useRouter();
 
   React.useEffect(() => {
     const getToken: string | null = localStorage.getItem('token');
@@ -12,7 +15,14 @@ const Header = () => {
     if (getToken) {
       setToken(getToken);
     }
-  }, []);
+  }, [token]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('account');
+
+    router.push('/auth/sign-in');
+  };
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
@@ -45,7 +55,7 @@ const Header = () => {
                 <a>Settings</a>
               </li>
               <li>
-                <a>Logout</a>
+                <a onClick={handleLogout}>Logout</a>
               </li>
             </ul>
           </div>

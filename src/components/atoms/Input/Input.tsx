@@ -5,8 +5,8 @@ type InputProps = {
   name: string;
   placeholder: string;
   type: 'password' | 'text' | 'email';
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const Input = ({

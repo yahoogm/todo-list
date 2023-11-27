@@ -5,7 +5,7 @@ import axios from 'axios';
 import { getToken } from '@/app/utils/getToken';
 import { useRouter } from 'next/navigation';
 import * as React from 'react';
-import { taskItem, taskResponse } from '@/app/utils/types';
+import { taskResponse } from '@/app/utils/types';
 
 type FormValues = {
   name: string | '';
@@ -58,8 +58,6 @@ const useFormEditModel = ({ id }: { id: string }) => {
   }, [id, token]);
 
   const handleUpdateTask = async (task: FormValues) => {
-    console.log(task);
-
     try {
       const req = await axios.patch<taskResponse>(
         `${process.env.API_URL}/task/${id}`,
@@ -72,7 +70,6 @@ const useFormEditModel = ({ id }: { id: string }) => {
         }
       );
       const res = req.data;
-      console.log(res);
       toast.success('Success edit task');
       router.push('/task');
     } catch (error) {

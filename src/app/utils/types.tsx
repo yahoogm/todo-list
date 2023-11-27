@@ -17,3 +17,10 @@ export type taskItem = {
   position: number;
   user_id: number;
 };
+
+export type userDetail = {
+  email: string;
+  id: number;
+  name: string;
+  username: string;
+};

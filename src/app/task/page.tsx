@@ -1,7 +1,7 @@
 import { Task } from '@/components/organisms';
 import { HeaderAndFooter } from '@/components/templates';
 
-const DashboardPage = () => {
+const TaskPage = () => {
   return (
     <HeaderAndFooter>
       <Task />
@@ -9,4 +9,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+export default TaskPage;

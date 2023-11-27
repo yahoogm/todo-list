@@ -4,3 +4,4 @@ export { default as FormTodo } from './Form/FormTodo/FormTodo';
 export { default as DetailTaskTable } from './DetailTaskTable/DetailTaskTable';
 export { default as TaskTable } from './TaskTable/TaskTable';
 export { default as FormEdit } from './Form/FormEdit/FormEdit';
+export { default as FormUser } from './Form/FormUser/FormUser';

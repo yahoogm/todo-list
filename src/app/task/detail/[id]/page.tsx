@@ -4,8 +4,8 @@ export const metadata = {
   title: 'Detail todo',
 };
 
-const TodoDetail = ({ params }: { params: { id: string } }) => {
+const DetailTaskPage = ({ params }: { params: { id: string } }) => {
   return <DetailTask id={params.id} />;
 };
 
-export default TodoDetail;
+export default DetailTaskPage;

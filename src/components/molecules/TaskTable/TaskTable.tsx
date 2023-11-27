@@ -30,7 +30,7 @@ const TaskTable = () => {
           text="add todo"
           width="btn"
           btnColor="btn-outline btn-info"
-          onClick={() => handleNavigate('/add-todo', 'push')}
+          onClick={() => handleNavigate('/task/add', 'push')}
         >
           <PlusCircleIcon className="w-6" />
         </Button>
@@ -56,13 +56,19 @@ const TaskTable = () => {
                       btnColor="btn-primary"
                       width="btn-sm"
                       onClick={() =>
-                        handleNavigate(`/tasks/detail/${task.id}`, 'push')
+                        handleNavigate(`/task/detail/${task.id}`, 'push')
                       }
                     >
                       <EyeIcon className="btn-xs rounded-md text-white" />
                     </Button>
 
-                    <Button btnColor="btn-secondary" width="btn-sm">
+                    <Button
+                      btnColor="btn-secondary"
+                      width="btn-sm"
+                      onClick={() =>
+                        handleNavigate(`/task/edit/${task.id}`, 'push')
+                      }
+                    >
                       <PencilIcon className="btn-xs rounded-md text-white" />
                     </Button>
                     <Button

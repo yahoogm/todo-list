@@ -3,7 +3,7 @@ import * as React from 'react';
 type InputProps = {
   id: string;
   name: string;
-  placeholder: string;
+  placeholder?: string | undefined;
   type: 'password' | 'text' | 'email';
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;

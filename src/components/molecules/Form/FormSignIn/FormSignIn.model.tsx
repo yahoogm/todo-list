@@ -46,7 +46,7 @@ const useFormSignInModel = () => {
       localStorage.setItem('account', parseUser);
 
       toast.success('Sign in success');
-      router.push('/tasks');
+      router.push('/task');
     } catch (error) {
       const err = error as {
         response?: { data?: { errors?: { email?: string } } };

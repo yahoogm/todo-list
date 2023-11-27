@@ -33,7 +33,7 @@ const useFormTodoModel = () => {
       });
 
       toast.success('Success add task');
-      router.push('/tasks');
+      router.push('/task');
     } catch (error) {
       toast.error('Failed add todo');
     }

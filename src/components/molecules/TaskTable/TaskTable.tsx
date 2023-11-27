@@ -83,7 +83,9 @@ const TaskTable = () => {
               );
             })
           ) : (
-            <div>loading</div>
+            <tr>
+              <td>Loading</td>
+            </tr>
           )}
         </tbody>
       </table>

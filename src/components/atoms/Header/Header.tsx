@@ -4,18 +4,13 @@ import * as React from 'react';
 import { Button } from '..';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { getToken } from '@/app/utils/getToken';
 
 const Header = () => {
-  const [token, setToken] = React.useState('');
+  const token = getToken('token');
   const router = useRouter();
 
-  React.useEffect(() => {
-    const getToken: string | null = localStorage.getItem('token');
-
-    if (getToken) {
-      setToken(getToken);
-    }
-  }, [token]);
+  if (!token) router.push('/auth/sign-in');
 
   const handleLogout = () => {
     localStorage.removeItem('token');

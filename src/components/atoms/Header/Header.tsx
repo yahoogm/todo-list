@@ -10,6 +10,11 @@ const Header = () => {
   const user = getUserDetail('account');
   const router = useRouter();
   const token = getToken('token');
+  const [isToken, setIsToken] = React.useState<string>();
+
+  React.useEffect(() => {
+    setIsToken(token || '');
+  }, [token]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -25,11 +30,11 @@ const Header = () => {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <Link href={token ? '/task' : '/'} className="btn btn-ghost text-xl">
+        <Link href={isToken ? '/task' : '/'} className="btn btn-ghost text-xl">
           The Todo
         </Link>
       </div>
-      {token ? (
+      {isToken ? (
         <details className="dropdown">
           <summary className="m-1 btn">{user.name}</summary>
           <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box">

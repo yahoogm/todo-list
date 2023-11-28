@@ -2,7 +2,7 @@ import { Task } from '@/components/organisms';
 import { HeaderAndFooter } from '@/components/templates';
 
 export const metadata = {
-  title: 'Todo Task',
+  title: 'Task todo',
 };
 
 const TaskPage = () => {

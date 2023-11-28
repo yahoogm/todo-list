@@ -6,12 +6,16 @@ import { HeaderAndFooter } from '@/components/templates';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { getToken } from '@/utils/getToken';
 import { useRouter } from 'next/navigation';
+import * as React from 'react';
 
 const EditUser = () => {
   const { handleNavigate } = useNavigate();
   const token = getToken('token');
   const router = useRouter();
-  if (!token) router.push('/auth/sign-in');
+
+  React.useEffect(() => {
+    if (!token) router.push('/auth/sign-in');
+  }, [token, router]);
   return (
     <HeaderAndFooter>
       <button

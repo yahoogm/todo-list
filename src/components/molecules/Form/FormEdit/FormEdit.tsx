@@ -1,5 +1,3 @@
-'use client';
-
 import useFormEditModel from './FormEdit.model';
 import { Button, Input } from '@/components/atoms';
 

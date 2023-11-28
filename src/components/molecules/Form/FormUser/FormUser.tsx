@@ -1,5 +1,3 @@
-'use client';
-
 import { Input, Button } from '@/components/atoms';
 import useFormUserModel from './FormUser.model';
 

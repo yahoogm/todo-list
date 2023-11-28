@@ -6,13 +6,16 @@ import { DetailTaskTable } from '@/components/molecules';
 import useNavigate from '@/hooks/useNavigate';
 import { getToken } from '@/utils/getToken';
 import { useRouter } from 'next/navigation';
+import * as React from 'react';
 
 const DetailTask: React.FC<{ id: string }> = ({ id }) => {
   const { handleNavigate } = useNavigate();
   const token = getToken('token');
   const router = useRouter();
 
-  if (!token) router.push('/auth/sign-in');
+  React.useEffect(() => {
+    if (!token) router.push('/auth/sign-in');
+  }, [token, router]);
 
   return (
     <HeaderAndFooter>

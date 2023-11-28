@@ -1,3 +1,5 @@
+'use client';
+
 import { SignIn } from '@/components/organisms';
 import { HeaderAndFooter } from '@/components/templates';
 

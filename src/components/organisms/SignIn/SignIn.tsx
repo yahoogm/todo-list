@@ -1,3 +1,5 @@
+'use client';
+
 import { FormSignIn } from '@/components/molecules';
 import Link from 'next/link';
 

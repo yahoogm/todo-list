@@ -7,11 +7,9 @@ import { useRouter } from 'next/navigation';
 import { getToken, getUserDetail } from '@/utils/getToken';
 
 const Header = () => {
-  const token = getToken('token');
   const user = getUserDetail('account');
   const router = useRouter();
-
-  if (!token) router.push('/auth/sign-in');
+  const token = getToken('token');
 
   const handleLogout = () => {
     localStorage.removeItem('token');

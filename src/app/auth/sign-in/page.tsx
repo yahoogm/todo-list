@@ -1,7 +1,9 @@
-'use client';
-
 import { SignIn } from '@/components/organisms';
 import { HeaderAndFooter } from '@/components/templates';
+
+export const metadata = {
+  title: 'Sign In',
+};
 
 const SignInPage = () => {
   return (

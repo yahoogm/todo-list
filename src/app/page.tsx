@@ -11,7 +11,7 @@ export default function Home() {
   if (token) router.push('/task');
   return (
     <HeaderAndFooter>
-      <div>oakwodkaw</div>
+      <div>The Todo</div>
     </HeaderAndFooter>
   );
 }

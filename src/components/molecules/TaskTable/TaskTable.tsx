@@ -1,6 +1,6 @@
 'use client';
 
-import { taskItem } from '@/app/utils/types';
+import { taskItem } from '@/utils/types';
 import { Button, LoadingTaskTable } from '@/components/atoms';
 import {
   EyeIcon,
@@ -8,9 +8,9 @@ import {
   PencilIcon,
   PlusCircleIcon,
 } from '@heroicons/react/24/outline';
-import usePagination from '@/app/hooks/usePagination';
+import usePagination from '@/hooks/usePagination';
 import * as React from 'react';
-import useNavigate from '@/app/hooks/useNavigate';
+import useNavigate from '@/hooks/useNavigate';
 
 const TaskTable = () => {
   const {

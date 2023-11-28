@@ -1,7 +1,7 @@
 'use client';
 
 import { HeaderAndFooter } from '@/components/templates';
-import { getToken } from './utils/getToken';
+import { getToken } from '../utils/getToken';
 import { useRouter } from 'next/navigation';
 
 export default function Home() {

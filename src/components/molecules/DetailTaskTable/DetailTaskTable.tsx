@@ -1,6 +1,6 @@
 'use client';
 
-import useDetailTask from '@/app/hooks/useDetailTask';
+import useDetailTask from '@/hooks/useDetailTask';
 import { LoadingDetailTask } from '@/components/atoms';
 import * as React from 'react';
 

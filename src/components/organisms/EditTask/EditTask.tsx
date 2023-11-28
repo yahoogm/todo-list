@@ -3,7 +3,7 @@
 import { HeaderAndFooter } from '@/components/templates';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { FormEdit } from '@/components/molecules';
-import useNavigate from '@/app/hooks/useNavigate';
+import useNavigate from '@/hooks/useNavigate';
 
 const EditTask: React.FC<{ id: string }> = ({ id }) => {
   const { handleNavigate } = useNavigate();

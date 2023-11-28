@@ -1,6 +1,6 @@
 'use client';
 
-import useNavigate from '@/app/hooks/useNavigate';
+import useNavigate from '@/hooks/useNavigate';
 import { FormUser } from '@/components/molecules';
 import { HeaderAndFooter } from '@/components/templates';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';

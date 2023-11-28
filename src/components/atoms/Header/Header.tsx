@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Button } from '..';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { getToken, getUserDetail } from '@/app/utils/getToken';
+import { getToken, getUserDetail } from '@/utils/getToken';
 
 const Header = () => {
   const token = getToken('token');

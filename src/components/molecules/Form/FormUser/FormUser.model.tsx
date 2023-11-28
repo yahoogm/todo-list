@@ -2,10 +2,10 @@ import * as yup from 'yup';
 import { useFormik } from 'formik';
 import toast from 'react-hot-toast';
 import axios from 'axios';
-import { getToken } from '@/app/utils/getToken';
+import { getToken } from '@/utils/getToken';
 import { useRouter } from 'next/navigation';
 import * as React from 'react';
-import { taskResponse, userDetail } from '@/app/utils/types';
+import { taskResponse, userDetail } from '@/utils/types';
 
 type FormValues = {
   name: string | '';

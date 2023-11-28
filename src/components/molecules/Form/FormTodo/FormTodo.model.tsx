@@ -2,7 +2,7 @@ import * as yup from 'yup';
 import { useFormik } from 'formik';
 import toast from 'react-hot-toast';
 import axios from 'axios';
-import { getToken } from '@/app/utils/getToken';
+import { getToken } from '@/utils/getToken';
 import { useRouter } from 'next/navigation';
 
 type FormValues = {

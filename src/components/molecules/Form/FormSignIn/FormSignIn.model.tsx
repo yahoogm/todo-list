@@ -45,7 +45,7 @@ const useFormSignInModel = () => {
       localStorage.setItem('token', response.token);
       localStorage.setItem('account', parseUser);
 
-      toast.success('Sign in success');
+      toast.success(`Welcome ${response.user.name}`);
       router.push('/task');
     } catch (error) {
       const err = error as {

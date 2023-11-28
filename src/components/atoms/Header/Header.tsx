@@ -23,10 +23,11 @@ const Header = () => {
   const navigateProfile = () => {
     router.push('/user/edit');
   };
+
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <Link href={'/'} className="btn btn-ghost text-xl">
+        <Link href={token ? '/task' : '/'} className="btn btn-ghost text-xl">
           The Todo
         </Link>
       </div>

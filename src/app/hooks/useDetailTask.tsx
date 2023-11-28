@@ -25,10 +25,8 @@ const useDetailTask = (props: { id: string }) => {
       );
       const res = req.data;
 
-      setTimeout(() => {
-        setDetailTasks(res);
-        setLoading(false);
-      }, 3000);
+      setDetailTasks(res);
+      setLoading(false);
     } catch (error) {
       const errMsg = error as Error;
 

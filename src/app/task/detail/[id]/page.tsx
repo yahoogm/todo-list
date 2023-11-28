@@ -1,7 +1,7 @@
 import { DetailTask } from '@/components/organisms';
 
 export const metadata = {
-  title: 'Detail todo',
+  title: 'Detail Todo',
 };
 
 const DetailTaskPage = ({ params }: { params: { id: string } }) => {

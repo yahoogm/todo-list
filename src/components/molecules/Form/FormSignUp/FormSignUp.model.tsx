@@ -52,15 +52,22 @@ const useFormSignUpModel = () => {
       router.push('/auth/sign-in');
     } catch (error) {
       const err = error as {
-        response?: { data?: { errors?: { email?: string } } };
+        response?: { data?: { errors?: { email?: string; username: string } } };
       };
 
-      const errCheck =
-        err.response && err.response.data && err.response.data.errors
-          ? err.response.data.errors.email
-          : 'email has already occured';
+      const emailError = err.response?.data?.errors?.email;
+      const usernameError = err.response?.data?.errors?.username;
+      let errMsg = '';
+      if (emailError && usernameError) {
+        errMsg = `${emailError} and ${usernameError}`;
+      } else if (usernameError) {
+        errMsg = usernameError;
+      } else if (emailError) {
+        errMsg = emailError;
+      } else {
+        errMsg = 'Failed to sign up';
+      }
 
-      const errMsg = errCheck || 'Failed to sign up';
       toast.error(errMsg);
     }
   };

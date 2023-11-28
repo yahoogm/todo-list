@@ -2,6 +2,8 @@
 
 yarn.lock
 
+.env
+
 # dependencies
 /node_modules
 /.pnp

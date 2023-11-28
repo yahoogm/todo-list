@@ -18,6 +18,7 @@ const usePagination = () => {
   const [error, setError] = React.useState<string | null>(null);
   const [deleteAdditionCount, setDeleteAdditionCount] =
     React.useState<number>(0);
+  const [statusFilter, setStatusFilter] = React.useState<string>('All');
 
   const [meta, setMeta] = React.useState({
     limit: 5,
@@ -32,6 +33,12 @@ const usePagination = () => {
       setLoading(true);
 
       try {
+        const isCompleteFilter =
+          statusFilter === 'Complete'
+            ? true
+            : statusFilter === 'Not Complete'
+            ? false
+            : undefined;
         const req = await axios.get<ApiResponse>(
           `${process.env.API_URL}/task`,
           {
@@ -42,15 +49,14 @@ const usePagination = () => {
             params: {
               offset,
               limit,
+              is_complete: isCompleteFilter,
             },
           }
         );
         const res = req.data;
 
-        setTimeout(() => {
-          setLoading(false);
-          setTasks(res.data);
-        }, 3000);
+        setLoading(false);
+        setTasks(res.data);
 
         setMeta({
           limit: meta.limit,
@@ -64,7 +70,7 @@ const usePagination = () => {
         setLoading(false);
       }
     },
-    [token, meta.limit]
+    [token, meta.limit, statusFilter]
   );
 
   const handleDeleteTask = React.useCallback(
@@ -110,6 +116,8 @@ const usePagination = () => {
     loading,
     error,
     meta,
+    setStatusFilter,
+    statusFilter,
     handleNextPage,
     handlePreviousPage,
     retrieveTasks,

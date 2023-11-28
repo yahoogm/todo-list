@@ -20,12 +20,14 @@ const TaskTable = () => {
     handleNextPage,
     handlePreviousPage,
     handleDeleteTask,
+    setStatusFilter,
+    statusFilter,
   } = usePagination();
   const { handleNavigate } = useNavigate();
 
   return (
     <React.Fragment>
-      <div className="flex justify-end">
+      <div className="flex justify-between ">
         <Button
           text="add todo"
           width="btn"
@@ -34,6 +36,17 @@ const TaskTable = () => {
         >
           <PlusCircleIcon className="w-6" />
         </Button>
+        <div className="form-control">
+          <select
+            className="select select-info bg-black"
+            onChange={(e) => setStatusFilter(e.target.value)}
+            value={statusFilter}
+          >
+            <option value={'All'}>All</option>
+            <option value={'Complete'}>Complete</option>
+            <option value={'Not Complete'}>Not Complete</option>
+          </select>
+        </div>
       </div>
 
       <table className="table table-zebra text-center overflow-y-auto h-97">

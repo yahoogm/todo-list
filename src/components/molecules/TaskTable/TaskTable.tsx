@@ -1,7 +1,7 @@
 'use client';
 
 import { taskItem } from '@/app/utils/types';
-import { Button } from '@/components/atoms';
+import { Button, LoadingTaskTable } from '@/components/atoms';
 import {
   EyeIcon,
   TrashIcon,
@@ -46,46 +46,50 @@ const TaskTable = () => {
         </thead>
         <tbody>
           {!loading ? (
-            tasks?.map((task: taskItem) => {
-              return (
-                <tr key={task.id}>
-                  <td>{task.name}</td>
-                  <td>{task.created_at}</td>
-                  <td className="space-x-2">
-                    <Button
-                      btnColor="btn-primary"
-                      width="btn-sm"
-                      onClick={() =>
-                        handleNavigate(`/task/detail/${task.id}`, 'push')
-                      }
-                    >
-                      <EyeIcon className="btn-xs rounded-md text-white" />
-                    </Button>
+            tasks?.length > 0 ? (
+              tasks?.map((task: taskItem) => {
+                return (
+                  <tr key={task.id}>
+                    <td>{task.name}</td>
+                    <td>{task.created_at}</td>
+                    <td className="space-x-2">
+                      <Button
+                        btnColor="btn-primary"
+                        width="btn-sm"
+                        onClick={() =>
+                          handleNavigate(`/task/detail/${task.id}`, 'push')
+                        }
+                      >
+                        <EyeIcon className="btn-xs rounded-md text-white" />
+                      </Button>
 
-                    <Button
-                      btnColor="btn-secondary"
-                      width="btn-sm"
-                      onClick={() =>
-                        handleNavigate(`/task/edit/${task.id}`, 'push')
-                      }
-                    >
-                      <PencilIcon className="btn-xs rounded-md text-white" />
-                    </Button>
-                    <Button
-                      btnColor="btn-error"
-                      width="btn-sm"
-                      onClick={() => handleDeleteTask(task.id)}
-                    >
-                      <TrashIcon className="btn-xs rounded-md text-white" />
-                    </Button>
-                  </td>
-                </tr>
-              );
-            })
+                      <Button
+                        btnColor="btn-secondary"
+                        width="btn-sm"
+                        onClick={() =>
+                          handleNavigate(`/task/edit/${task.id}`, 'push')
+                        }
+                      >
+                        <PencilIcon className="btn-xs rounded-md text-white" />
+                      </Button>
+                      <Button
+                        btnColor="btn-error"
+                        width="btn-sm"
+                        onClick={() => handleDeleteTask(task.id)}
+                      >
+                        <TrashIcon className="btn-xs rounded-md text-white" />
+                      </Button>
+                    </td>
+                  </tr>
+                );
+              })
+            ) : (
+              <tr>
+                <td>No task available</td>
+              </tr>
+            )
           ) : (
-            <tr>
-              <td>Loading</td>
-            </tr>
+            <LoadingTaskTable />
           )}
         </tbody>
       </table>

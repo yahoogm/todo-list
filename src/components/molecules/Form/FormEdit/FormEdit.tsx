@@ -63,17 +63,17 @@ const FormEdit = ({ id }: { id: string }) => {
           name="is_complete"
           onChange={(e) => {
             model.formik.handleChange(e);
-            if (e.target.value === 'Yes') {
+            if (e.target.value === 'Complete') {
               model.formik.setFieldValue('is_complete', true);
             } else {
               model.formik.setFieldValue('is_complete', false);
             }
           }}
           onBlur={model.formik.handleBlur}
-          value={model.formik.values.is_complete ? 'Yes' : 'No'}
+          value={model.formik.values.is_complete ? 'Complete' : 'Not complete'}
         >
-          <option value={'Yes'}>Yes</option>
-          <option value={'No'}>No</option>
+          <option value={'Complete'}>Complete</option>
+          <option value={'Not complete'}>Not complete</option>
         </select>
       </div>
       <div className="justify-end flex">

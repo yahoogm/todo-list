@@ -10,7 +10,10 @@ export const getToken = (key: string) => {
 export const getUserDetail = (key: string) => {
   if (typeof localStorage !== 'undefined') {
     const user = localStorage.getItem(key);
-    return user;
+    if (user !== null) {
+      return JSON.parse(user);
+    }
+    return null;
   } else {
     return null;
   }

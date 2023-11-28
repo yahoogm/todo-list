@@ -47,13 +47,16 @@ const usePagination = () => {
         );
         const res = req.data;
 
-        setTasks(res.data);
+        setTimeout(() => {
+          setLoading(false);
+          setTasks(res.data);
+        }, 3000);
+
         setMeta({
           limit: meta.limit,
           offset: res.meta.offset,
           total: res.meta.total,
         });
-        setLoading(false);
       } catch (error) {
         const errMsg = error as Error;
 
